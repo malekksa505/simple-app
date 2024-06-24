@@ -3,10 +3,7 @@ import { procedure, router } from "../trpc";
 
 export const userRouter = router({
     getUsers: procedure.query(() =>{
-        return [
-            {name: "malek", gender:"male"},
-            {name: "fatemah", gender:"female"}
-        ]
+        return Prisma
     }),
     addUser: procedure.input(z.object({
         name:z.string(),
