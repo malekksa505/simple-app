@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export const userRouter = router({
     getUsers: procedure.query(async() =>{
-        return await Prisma.user.findMany()
+        return await prisma.user.findMany()
     }),
     addUser: procedure.input(z.object({
         name:z.string(),
